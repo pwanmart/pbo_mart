@@ -71,7 +71,7 @@ class Pbo(models.Model):
         max_length=1, choices=MEMBERSHIP_CHOICES, default=MEMBERSHIP_BRONZE)
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    voucher_balance = models.DecimalField(max_digits=15, decimal_places=2)
+    voucher_balance = models.DecimalField(max_digits=15, decimal_places=2, default=0.00)
 
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
